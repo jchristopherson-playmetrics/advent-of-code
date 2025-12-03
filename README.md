@@ -4,7 +4,7 @@ A Golang project to organize and run Advent of Code solutions by year and day.
 
 ## Project Structure
 
-```
+```markdown
 advent-of-code/
 ├── main.go                     # Main entry point
 ├── go.mod                      # Go module file
@@ -133,7 +133,7 @@ The program outputs:
 - Execution time
 
 Example:
-```
+```markdown
 Year 2025, Day 1, Part 1
 Answer: 42
 Time: 123.456µs
@@ -142,7 +142,3 @@ Time: 123.456µs
 ## Requirements
 
 - Go 1.21 or higher
-
-## License
-
-MIT
