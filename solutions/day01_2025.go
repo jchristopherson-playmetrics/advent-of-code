@@ -14,6 +14,11 @@ const (
 	targetPos = 0
 )
 
+// wrap calculates the final position after moving a delta from a start position on a circular dial of given size.
+// It also counts how many times the position passes through zero during the movement.
+// Returns:
+//   end    - the final position on the dial after applying the delta
+//   passes - the number of times the position crosses zero
 func wrap(start, delta, size int) (end, passes int) {
 	end = (start + delta%size + size) % size
 
@@ -47,6 +52,10 @@ func wrap(start, delta, size int) (end, passes int) {
 	return end, passes
 }
 
+// dontReInventTheWheel processes a series of dial movement instructions.
+// It simulates moving a dial based on each instruction, starting from startPos.
+// If part2 is false, it counts the number of times the dial lands exactly on targetPos (zero).
+// If part2 is true, it counts the number of times the dial passes over targetPos (zero) during movements.
 func dontReInventTheWheel(input string, part2 bool) int {
 	pos := startPos
 	zeroCount := 0
