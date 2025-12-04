@@ -54,7 +54,7 @@ func maxBankJoltage(line string, k int) int64 {
 
 
 
-func solveDay3(input string, part2 bool) int {
+func solveDay3(input string, part2 bool) int64 {
     k := 2
     if part2 {
         k = 12
@@ -64,17 +64,17 @@ func solveDay3(input string, part2 bool) int {
     for _, line := range strings.Fields(input) {
         sum += maxBankJoltage(line, k)
     }
-    return int(sum)
+    return sum
 }
 
 // Part1 solves part 1 of the puzzle
 func (d *Day03) Part1(input string) string {
 	result := solveDay3(input, false)
-	return strconv.Itoa(result)
+	return strconv.FormatInt(result, 10)
 }
 
 // Part2 solves part 2 of the puzzle
 func (d *Day03) Part2(input string) string {
 	result := solveDay3(input, true)
-	return strconv.Itoa(result)
+	return strconv.FormatInt(result, 10)
 }
