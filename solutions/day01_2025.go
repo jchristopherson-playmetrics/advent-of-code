@@ -52,11 +52,11 @@ func wrap(start, delta, size int) (end, passes int) {
 	return end, passes
 }
 
-// dontReInventTheWheel processes a series of dial movement instructions.
+// solve processes a series of dial movement instructions.
 // It simulates moving a dial based on each instruction, starting from startPos.
 // If part2 is false, it counts the number of times the dial lands exactly on targetPos (zero).
 // If part2 is true, it counts the number of times the dial passes over targetPos (zero) during movements.
-func dontReInventTheWheel(input string, part2 bool) int {
+func solve(input string, part2 bool) int {
 	pos := startPos
 	zeroCount := 0
 
@@ -89,12 +89,12 @@ func dontReInventTheWheel(input string, part2 bool) int {
 
 // Part1 solves part 1 of the puzzle
 func (d *Day01) Part1(input string) string {
-	result := dontReInventTheWheel(input, false)
+	result := solve(input, false)
 	return strconv.Itoa(result) + " is the password"
 }
 
 // Part2 solves part 2 of the puzzle
 func (d *Day01) Part2(input string) string {
-	result := dontReInventTheWheel(input, true)
+	result := solve(input, true)
 	return strconv.Itoa(result) + " is the password"
 }
