@@ -10,9 +10,16 @@ type Day02 struct{}
 
 func RangeSlice(r string) []int {
     p := strings.Split(strings.TrimSpace(r), "-")
-    s, _ := strconv.Atoi(p[0])
-    e, _ := strconv.Atoi(p[1])
-
+    if len(p) != 2 {
+        // Malformed input, return empty slice
+        return []int{}
+    }
+    s, err1 := strconv.Atoi(p[0])
+    e, err2 := strconv.Atoi(p[1])
+    if err1 != nil || err2 != nil || e < s {
+        // Malformed numbers or invalid range, return empty slice
+        return []int{}
+    }
     out := make([]int, e-s+1)
     for i := range out {
         out[i] = s + i
@@ -40,7 +47,7 @@ func HasRepeatedPattern(s string) bool {
 }
 
 func solveDay2(input string, part2 bool) int {
- 	// psuedocode
+ 	// pseudocode
 	sum := 0
 	// with input, split on comma
 	parts := strings.Split(input, ",")
