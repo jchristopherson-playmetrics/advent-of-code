@@ -8,6 +8,10 @@ import (
 // Day02 represents the solution for 2025 Day 2
 type Day02 struct{}
 
+func init() {
+	register2025(2, func() Solution { return &Day02{} })
+}
+
 func rangeSlice(r string) []int {
     p := strings.Split(strings.TrimSpace(r), "-")
     if len(p) != 2 {
