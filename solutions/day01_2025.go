@@ -8,6 +8,10 @@ import (
 // Day01 represents the solution for 2025 Day 1
 type Day01 struct{}
 
+func init() {
+    register2025(1, func() Solution { return &Day01{} })
+}
+
 const (
 	dialSize  = 100
 	startPos  = 50
