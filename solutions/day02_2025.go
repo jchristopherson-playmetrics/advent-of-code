@@ -9,7 +9,7 @@ import (
 type Day02 struct{}
 
 func init() {
-    register2025(2, func() Solution { return &Day02{} })
+	register2025(2, func() Solution { return &Day02{} })
 }
 
 func rangeSlice(r string) []int {

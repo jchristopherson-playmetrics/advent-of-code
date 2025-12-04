@@ -9,7 +9,7 @@ import (
 type Day03 struct{}
 
 func init() {
-    register2025(3, func() Solution { return &Day03{} })
+	register2025(3, func() Solution { return &Day03{} })
 }
 
 func maxBankJoltage(line string, k int) int64 {
@@ -44,8 +44,8 @@ func maxBankJoltage(line string, k int) int64 {
     // Convert selected digits to a number
     var val int64
     for _, d := range result {
-        n, _ := strconv.Atoi(d)
-        val = val*10 + int64(n)
+        digit, _ := strconv.Atoi(d)
+        val = val*10 + int64(digit)
     }
 
     return val

@@ -9,7 +9,7 @@ import (
 type Day01 struct{}
 
 func init() {
-    register2025(1, func() Solution { return &Day01{} })
+	register2025(1, func() Solution { return &Day01{} })
 }
 
 const (
