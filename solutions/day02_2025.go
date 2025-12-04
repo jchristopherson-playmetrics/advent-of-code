@@ -8,7 +8,7 @@ import (
 // Day02 represents the solution for 2025 Day 2
 type Day02 struct{}
 
-func RangeSlice(r string) []int {
+func rangeSlice(r string) []int {
     p := strings.Split(strings.TrimSpace(r), "-")
     if len(p) != 2 {
         // Malformed input, return empty slice
@@ -27,7 +27,7 @@ func RangeSlice(r string) []int {
     return out
 }
 
-func IsDoubledNumber(n string) bool {
+func isDoubledNumber(n string) bool {
     if len(n)%2 != 0 {
         return false
     }
@@ -36,7 +36,7 @@ func IsDoubledNumber(n string) bool {
     return n[:half] == n[half:]
 }
 
-func HasRepeatedPattern(s string) bool {
+func hasRepeatedPattern(s string) bool {
     if len(s) < 2 {
         return false
     }
@@ -54,16 +54,16 @@ func solveDay2(input string, part2 bool) int {
 	// for each set in the input,
 	for _, part := range parts {
 		// find all the numbers in the set
-		ids := RangeSlice(part)
+		ids := rangeSlice(part)
 		
 		for _, id := range ids {
 			s := strconv.Itoa(id)
 			// determine which are invalid (repeat the same numbers twice)
-			if !part2 && IsDoubledNumber(s) {
+			if !part2 && isDoubledNumber(s) {
 				sum += id
-				
+
 			// for part 2, determine if the ids have a repeated pattern
-			} else if part2 && HasRepeatedPattern(s) {
+			} else if part2 && hasRepeatedPattern(s) {
 				sum += id
 			}
 		}
